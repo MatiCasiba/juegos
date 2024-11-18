@@ -204,3 +204,20 @@ p{
 }
 ```
 
+## Ajuste en el footer
+El footer ahora tendrá un color de letra blanco, que antes no lo tenia:
+```sh
+footer{
+    color: var(--colorLetra);
+}
+```
+
+## Hover
+Eh usado un hover para el elemento button, cada vez que el usuario se pare por este elemento, cambiará su color de fondo:
+```sh
+button:hover{
+    background-color: var(--colorCaja);
+    border: 1px solid #d81159;
+}
+```
+

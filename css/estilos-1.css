@@ -99,3 +99,9 @@ footer{
     text-align: center;
     margin: auto;
 }
+
+/* hover */
+button:hover{
+    background-color: var(--colorCaja);
+    border: 1px solid #d81159;
+}
