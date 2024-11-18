@@ -13,7 +13,7 @@
     --colorSubtitulo: #aa1155;
     --colorHr: #aa1155;
     --colorBordeBoton: #008000;
-    --colorFooter: #fafafab7;
+    --colorFooter: #fafafa46;
 }
 
 body{
@@ -60,6 +60,7 @@ button{
 }
 footer{
     background-color: var(--colorFooter);
+    color: var(--colorLetra);
     width: 90%;
     margin: auto;
     margin-top: 10px;
