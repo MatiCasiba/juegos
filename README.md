@@ -69,3 +69,114 @@ Como el archivo de estilo-1.css se encuentra dentro de la carpeta css, lo que ca
 import './css/estilos-1.css' 
 ```
 
+## Colores y estilo
+Agregué colores y fui ajustando tambien las cajas, para empezar, cree colores que luego los utilizaré en elementos con un var():
+```sh
+:root{
+    --colorLetra: #fafafa;
+    --colorTituloSubtitulo: #fafafa;
+    --colorBoton: #119822;
+    --colorCuerpo: #d81159;
+    --colorCaja: #aa1155;
+    --colorSubtitulo: #aa1155;
+    --colorHr: #aa1155;
+    --colorBordeBoton: #008000;
+    --colorFooter: #fafafab7;
+}
+```
+La finalidad de esto es si a futuro quiero cambiar los colores de tales elementos, solo tengo que cambiarlos aquí y no estar cambiando los valores en cada elemento.
+
+### Titulo y cajas
+Notarás varios colores de fondo, en el cuerpo, en cajas y en el titulo, que tambien tendrán diferente tamaños, te los explicaré:
+* Titulo
+```sh
+h1{
+    width: 90%; # ocupa un 90% de ancho
+    margin: auto; # centra el recuadro
+    background-color: var(--colorCaja); #color de fondo
+    color: var(--colorTituloSubtitulo); # color de letra
+    font-size: 50px; # tamaño de letra
+    text-align: center; #centra el texto
+    border-left: 10px solid white; # estilo par el borde izquerdo
+    border-right: 10px solid white; # estilo para el borde derecho
+    padding: 2%; # relleno
+}
+```
+
+* Cajas: para dar estilos a las cajas, trabajaré con clases, bien verás en el arhcivo index.html que hay clases en elementos div, con esas trabajaré en css para dar color de fondo e ajustar el tamañao.
+```sh
+.caja{
+    width: 90%; # ocupará el 90% de ancho de la pantalla
+    margin: auto; # la función es centrar esta caja
+    margin-top: 30px; # trndrá un espacio debajo de esta caja
+    background-color: var(--colorCaja); # color de fondo
+    border-radius: 10px; # sacaré las esquinas puntiagudas
+    padding: 2%; # su grosor
+}
+
+.caja-juegos{
+    background-color: var(--colorCajaJuegos); # color de fondo
+    padding: 2%;
+    border-radius: 10px;
+    margin-bottom: 10px; # verás que hay espacio entre las dos cajas, el responsable de dicha accion es este margin-bottom
+}
+```
+### Subtitulos
+Notarás que hay elementos h2 con el color de letra de distito color y ubicado de otra manera, para lograrlo, solo a un elemento h2 le tuve que asignar 2 clases en el archivo index.html, los otros se comportarán de misma manera:
+```sh
+# html
+<h2 class="color-unico subtitulo-unico"> Los más vendidos</h2>
+
+# css
+.subtitulo-unico{
+    text-align: left; # lo declaré a la izquierda 
+    margin: 15px 0 20px 4px; # arriba(15px), derecha(0), abajo(20px), izquierda(4px)
+}
+.color-unico{
+    color: var(--colorTituloSubtitulo);
+}
+```
+Hice estas clases con la finalidad de que solamente este elemento h2 se comporte de manera distinta, ya que los demás h2 actuarán de otra forma:
+```sh
+h2{
+    color: var(--colorSubtitulo); # color de letra
+    text-align: end; # el texto se colocará a la derecha
+    font-size: 20px; # tamaño de letra
+    margin-bottom: 0; # no tendrá margen debajo, lo que logra que el texto quede más cerca del borde creado <hr>
+}
+```
+
+### Elemento hr
+Al elemento hr le di color y estilo, lo he heco de la siguiente manera:
+```sh
+hr{
+    border: 1px dotted var(--colorHr); # grosor del borde, estilo del borde, color del borde
+    border-right: none;
+    border-left: none;
+    margin-top: 0;
+}
+```
+* Nota: dotted le dará el estilo de puntos en el borde, con los bordes derecho e izquierdo, lo declaré none debido a que al inicio y al final dichos puntos eran un poco grande al resto, entonces al hacerlos none, logré quitarlos.
+
+### Footer
+El pie de la página tendrá unn diseño, lo hice de la siguiente manera:
+```sh
+footer{
+    background-color: var(--colorFooter); # el color footer tendrá un poco de transparencia
+    width: 90%; # ocupa el 90% del ancho
+    margin: auto; lo centro 
+    margin-top: 10px; # tednrá espacio arriba
+    margin-bottom: 10px; # tendrá espacio abajo
+    text-align: center; # centra el texto
+    border-radius: 10px; 
+    padding: 4%;
+}
+```
+
+## Box-sizing
+La funcion del box-sizing: border-box hace que el padding y el border pasen a formar parte del cálculo del ancho de la caja y no lo suman posteriormente, lo usé de la siguiente manera:
+```sh
+*{ # para que afecte a todos
+    box-sizing: border-box;
+}
+```

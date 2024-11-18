@@ -1,7 +1,45 @@
+*{
+    box-sizing: border-box;
+}
 :root{
     --colorLetra: #fafafa;
+    --colorTituloSubtitulo: #fafafa;
+    --colorCajaJuegos: #fafafa;
     --colorBoton: #119822;
+    --colorCuerpo: #d81159;
+    --colorCaja: #aa1155;
+    --colorSubtitulo: #aa1155;
+    --colorHr: #aa1155;
     --colorBordeBoton: #008000;
+    --colorFooter: #fafafab7;
+}
+
+body{
+    background-color: var(--colorCuerpo);
+}
+h1{
+    width: 90%;
+    margin: auto;
+    background-color: var(--colorCaja);
+    color: var(--colorTituloSubtitulo);
+    font-size: 50px;
+    text-align: center;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    padding: 2%;
+}
+
+h2{
+    color: var(--colorSubtitulo);
+    text-align: end;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+hr{
+    border: 1px dotted var(--colorHr);
+    border-right: none;
+    border-left: none;
+    margin-top: 0;
 }
 img{
     width: 100%;
@@ -12,6 +50,40 @@ button{
     border: 1px solid var(--colorBordeBoton);
     border-radius: 5px;
     padding: 5%;
+}
+footer{
+    background-color: var(--colorFooter);
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 4%;
+}
+
+/* clases */
+.caja{
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    background-color: var(--colorCaja);
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.caja-juegos{
+    background-color: var(--colorCajaJuegos);
+    padding: 2%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.subtitulo-unico{
+    text-align: left;
+    margin: 15px 0 20px 4px;
+}
+.color-unico{ /* h2 class="color-unico" */
+    color: var(--colorTituloSubtitulo);
 }
 .boton{
     width: 200px;
