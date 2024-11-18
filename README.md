@@ -180,3 +180,27 @@ La funcion del box-sizing: border-box hace que el padding y el border pasen a fo
     box-sizing: border-box;
 }
 ```
+## Tipografía
+Eh importado solo una tipografía para la página y la coloqué en el elemento body para que sea hereditaria para los demás elementos que contengan texto:
+```sh
+body{
+    font-family: "Roboto", sans-serif;
+}
+```
+* Ajusté tamaños de letra en los elementos:
+```sh
+h1{
+    font-size: 50px; # tamaño
+    font-weight: 600; # ancho de las letras
+}
+h2{
+    font-size: 20px;
+}
+p{
+    font-size: 12px;
+}
+.subtitulo-unico{
+    font-size: 20px;
+}
+```
+
