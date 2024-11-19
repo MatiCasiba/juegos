@@ -244,3 +244,68 @@ a:hover{
 }
 ```
 
+## Contenido del boton de compra
+Cuando selecciones el botón de "comprar!", esto se va a encargar de enviarte al archivo que lo contiene, todo esto se encuentra dentro de la carpeta pages, un archivo html y un archvio js (para importar el archivo estilos-1.css trabajado):
+```sh
+# un ejemplo:
+<a href="pages/mario-kart-8/mario-kart.html" title="Mario Kart 8 Deluxe">Comprar!</a>
+```
+Esta dirección te enviará al archivo mario-kart.html, la estructura es similar al de la página principal, al igual que también será el mismo estilo para el archivo mk-11.html.
+
+### Estructura de los dos archivos nuevos html
+La estructura que tendrán estos dos nuevos archivos, como bien mencioné anterior mente, serán iguales
+```sh
+<header>
+  <h1></h1>
+</header>
+
+<main> # contenido
+  <div class="caja">
+
+    <div class="caja-juegos">
+      <h2>Subtitulo</h2>
+      <hr>
+      <img src="direccion-de-imagenes" alt="nombre de la imagen">
+      <p>Texto</p>
+      <hr>
+      # -- especicicaciones/ requisitos minimo y recomendado (hecho con h3)
+          
+      <div class="boton">
+        <a href="">Volver!</a> # un diseño de boton para volver devuelta a la página principal
+      </div>
+    </div>
+
+  </div>
+    </main>
+
+<footer>Desarrollado por misitio.com</footer> # pie de pagina 
+```
+* Nota: notarás que despues de los elementos h3, en los elementos p tendrán en partes del texto el elemento b, lo utilizo solo por decoración y destacar. Aparte de la decoración, le doy espacio en el margen derecho del elemento b.
+```sh
+b{
+    margin-right: 5px;
+}
+```
+La finalidad es darle mas espacio entre lo que está dentro del elemento b y el texto que le sigue, ya quehaciendo un espacio con la tecla de space no bastaba, entonces cree esto. 
+
+### Una vincuación en un boton
+Al momento de crear los botones para volver, hice una expecion en uno, lo verás en el archivo mk-11.html:
+```sh
+<a href="../../index.html#mk11">Volver!</a>
+```
+Esto está conectado a un div que tiene un id="mk11", el motivo por el cual realicé esto, fue porque al momento de volver, te manda al principio de la página, y me es una molestia bajar nuevamente hasta mortal kombat 11. Entonces le agregué ese id para que al momento de volver, vuelva en donde se encuentra mortal kombat 11 en mi archivo index.html:
+```sh
+# de archivo index.html:
+
+<div class="caja-juegos" id="mk11"> # acá coloco el id
+  <h2>Mortal Kombat 11</h2>
+  <hr>
+  <img src="/image/mortal-kombat-11.webp" alt="mortal kombat 11 imagen">
+  # -- TEXTO --
+  <div class="boton">
+    <a href="pages/mortal-kombat/mk-11.html" title="Mortal Kombat 11">Comprar!</a>
+  </div>
+
+</div> <!-- juego mortal kombat -->
+```
+

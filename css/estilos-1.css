@@ -42,6 +42,9 @@ h2{
 p{
     font-size: 12px;
 }
+b{
+    margin-right: 5px;
+}
 hr{
     border: 1px dotted var(--colorHr);
     border-right: none;
