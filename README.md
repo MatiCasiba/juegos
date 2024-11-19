@@ -221,3 +221,26 @@ button:hover{
 }
 ```
 
+## Modificación de botones
+Cambie el elemento button por un elemento de anclaje:
+```sh
+# html
+<div class="boton">
+    <a href="una-dirección">Comprar!</a>
+</div>
+
+# css
+a{
+    color: var(--colorLetra);
+    background-color: var(--colorBoton);
+    border: qpx solid var(--colorBordeBoton);
+    border-radius: 5px;
+    padding: 3%;
+    text-decoration: none;
+}
+a:hover{
+    background-color: var(--colorCaja);
+    border: 1px solid #d81159;
+}
+```
+

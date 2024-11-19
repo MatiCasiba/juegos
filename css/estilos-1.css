@@ -51,13 +51,16 @@ hr{
 img{
     width: 100%;
 }
-button{
+
+a{
     color: var(--colorLetra);
     background-color: var(--colorBoton);
-    border: 1px solid var(--colorBordeBoton);
+    border: qpx solid var(--colorBordeBoton);
     border-radius: 5px;
-    padding: 5%;
+    padding: 3%;
+    text-decoration: none;
 }
+
 footer{
     background-color: var(--colorFooter);
     color: var(--colorLetra);
@@ -95,13 +98,15 @@ footer{
     color: var(--colorTituloSubtitulo);
 }
 .boton{
-    width: 200px;
+    width: 300px;
     text-align: center;
     margin: auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 /* hover */
-button:hover{
+a:hover{
     background-color: var(--colorCaja);
     border: 1px solid #d81159;
 }
