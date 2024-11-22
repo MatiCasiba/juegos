@@ -1,6 +1,6 @@
 * Nombre: Matias Casiba
-* Link Repo Github:
-* Link Netlify:
+* Link Repo Github: https://github.com/MatiCasiba/juegos
+* Link Netlify: https://juegos-matias-casiba.netlify.app/
 
 # Página de Juegos
 
