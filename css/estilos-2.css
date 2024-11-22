@@ -1,4 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 *{
     box-sizing: border-box;
 }
+:root{
+    --colorSombra: #161a1d;
+    --colorSombraTextoFooter: #ba181b;
+    --colorLetra: #fafafa;
+    --colorTituloSubtitulo: #fafafa;
+    --colorCajaJuegos: #fafafa;
+    --colorBoton: #161a1d;
+    --colorSombraImagen: #ba181b;
+    --colorCuerpo: #d3d3d3b2;
+    --colorCaja: #e5383b;
+    --colorSubtitulo: #e5383b;
+    --colorBorde: #a4161a;
+    --colorBordeBoton: #a4161a;
+    --colorFooter: #0b090a;
+}
 
+html{
+    background-image: url(../public/image/6936478_game_gaming_play_player_sports_icon.png);
+    padding: 0;
+}
+
+body{
+    background-color: var(--colorCuerpo);
+    font-family: "Josefin Sans", sans-serif;
+    margin: 0;
+}
+
+h1{
+    width: 100%;
+    margin: auto;
+    background-color: var(--colorCaja);
+    box-shadow: 0 5px 20px var(--colorSombra);
+
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 15px;
+    color: var(--colorTituloSubtitulo);
+    text-shadow: 2px 2px 2px var(--colorSombra);
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+h2{
+    width: 200px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 5px;
+    color: var(--colorSubtitulo);
+    text-align: center;
+    font-size: 20px;
+    padding: 1%;
+    border: 3px solid var(--colorBorde);
+    border-radius: 5px;
+    box-shadow: 4px 2px 5px var(--colorSombra);
+}
+h3{
+    color: var(--colorSubtitulo);
+    text-shadow: 2px 1px 2px var(--colorSombra);
+}
+
+p{
+    font-size: 12px;
+    text-align: justify;
+}
+b{
+    margin-right: 5px;
+    color: var(--colorSubtitulo);
+}
+
+hr{
+    border: none;
+}
+
+img{
+    width: 100%;
+    box-shadow: 0 0 10px var(--colorSombra);
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+a{
+    color: var(--colorLetra);
+    background-color: var(--colorBoton);
+    border: 2px solid var(--colorBordeBoton);
+    border-radius: 5px;
+    padding: 3%;
+    text-decoration: none;
+}
+
+footer{
+    background-color: var(--colorFooter);
+    font-size: 15px;
+    color: var(--colorLetra);
+    text-shadow: 1px 2px 2px var(--colorSombraTextoFooter);
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 1%; 
+}
+
+/* clases */
+.caja{
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 35px;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.caja-juegos{
+    background-color: var(--colorCajaJuegos);
+    box-shadow: 0 0 8px var(--colorSombra);
+    padding: 2%;
+    border: 2px solid var(--colorBorde);
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    position: relative;
+}
+.subtitulo-unico{
+    width: 200px;
+    background-color: var(--colorCaja);
+    font-size: 20px;
+    border: 5px double var(--colorSombra);
+    border-radius: 15px;
+    padding: 2%;
+    margin: 20px 0 0 3px;
+}
+.color-unico{ /* h2 class="color-unico" */
+    color: var(--colorTituloSubtitulo);
+}
+.boton{
+    width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); 
+    bottom: -40px;
+
+}
+
+/* hover */
+a:hover{
+    color: #161a1d;
+    background-color: var(--colorCaja);
+}
+img:hover{
+    box-shadow: 0 0 15px var(--colorSombraImagen);
+}

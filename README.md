@@ -309,3 +309,206 @@ Esto está conectado a un div que tiene un id="mk11", el motivo por el cual real
 </div> <!-- juego mortal kombat -->
 ```
 
+## NUEVO ARCHIVO CSS (estilos-2.css)
+El segundo diseño de esta página eh cambiado algunas cosas, tanto colores, como imágen de fondo (tambien jugué con su color), positions, sombras, etc. Te mostraré como fui haciendo este archivo de css.
+
+### Para importar el nuevo estilo
+En el archivo de main.js importo el nuevo del css
+```sh
+import './css/estilos-2.css'
+```
+
+### Colores
+Eh trabajado con colores rojos, gris, blanco y negros
+```sh
+:root{
+    --colorSombra: #161a1d; # negro
+    --colorSombraTextoFooter: #ba181b; # rojo
+    --colorLetra: #fafafa; # blanco
+    --colorTituloSubtitulo: #fafafa; # blanco
+    --colorCajaJuegos: #fafafa; # blanco
+    --colorBoton: #161a1d; # negro distino
+    --colorSombraBoton: #ba181b; # rojo
+    --colorCuerpo: #d3d3d3b2; # gris transparente
+    --colorCaja: #e5383b; # rojo claro 
+    --colorSubtitulo: #e5383b; # rojo claro
+    --colorBorde: #a4161a; # rojo oscuro
+    --colorBordeBoton: #a4161a; # rojo oscuro
+    --colorFooter: #0b090a; # negro mas oscuro 
+}
+```
+La finalidad, es que al momento de dar colores a los elementos, estaré usando var () nuevamente, entonces si quiero modificar los colores, solo los tengo tocar en :root y no en cada elemento.
+
+### Elemento html y body
+En el elemento html, importaré una imágen de fondo y sacaré el relleno para evitar desprolijidades:
+```sh
+html{
+    background-image: url(../public/image/6936478_game_gaming_play_player_sports_icon.png);
+    padding: 0;
+}
+```
+Los iconos de fondo tiene un contraste de negro bastante alto, entonces para apagar el negro de los bordes de estos iconos y el color blanco de fondo, en el elemento body agregué un color gris transparente, para que se sigan notando los iconos de fondo:
+```sh
+body{
+    background-color: var(--colorCuerpo);
+    font-family: "Josefin Sans", sans-serif;
+    margin: 0;
+}
+```
+* Nota: eliminé los margenes de arriba, debajo, izquierda y derecha, también importé una fuente que afecatará a casi todos los textos que contiene cada elemento.
+
+### TITULO
+En el elemento h1 eh modificado varias cosas, te pasaré explicar las funciones de cada uno:
+```sh
+h1{
+    width: 100%; 
+    margin: auto;
+    background-color: var(--colorCaja);
+    box-shadow: 0 5px 20px var(--colorSombra); # 0, sombra debajo(5px), degradado de la sombra(20px)
+    
+    font-family: "Bebas Neue", sans-serif; # tipografía distinta al del elemento body
+    letter-spacing: 15px; # espacio entre letras
+    color: var(--colorTituloSubtitulo);
+    text-shadow: 2px 2px 2px var(--colorSombra); # sombra derecha(2px), sombra debajo (2px), degradado (2px)
+    font-size: 30px; 
+    font-weight: bold; # grosor del texto
+    text-align: center; # centra el texto
+    
+    position: fixed; # fija completamente el titulo
+    top: 0; # saco espacio que se encontraba en su margen de arriba
+    z-index: 10;
+}
+```
+* Nota: z-index con el valor de 10, lo puse porque tenia el problema de que al momento que bajaba el titulo, se escondía detrás de la clase .caja-juegos, para solucionarlo lo agregué, logré corregir el problema.
+
+### Subtitulos
+En el elemento h2 tendra una fuente distinta, mientras que en elemento h3, heredará tipografía que se declaró en el elemento body. Algo a resaltar en los elementos h2 es que los elementos h2 que se encuentran dentro de la clase .caja-juegos, tendrán un distinto diseño al que está fuera de esta clase, el elemento h2 que se encuentra fuera tendrá una clase propia que será "subtitulo-unico", acá es donde le doy otro diseño a este elemento h2:
+```sh
+h2{
+    width: 200px; # su ancho (lo que verás que no se extiende a lo largo de la caja juegos.)
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 5px;
+    color: var(--colorSubtitulo);
+    text-align: center; # centra el texto del recudaro del subtitulo
+    font-size: 20px;
+    padding: 1%; # tendrá un relleno
+    border: 3px solid var(--colorBorde);
+    border-radius: 5px; # elimina las esquinas puntiagudas
+    box-shadow: 4px 2px 5px var(--colorSombra); # una sombra detrás del recuadro en los subtitulos
+}
+h3{
+    color: var(--colorSubtitulo);
+    text-shadow: 2px 1px 2px var(--colorSombra); # una sombro en los textos de los elementos h3
+}
+.subtitulo-unico{
+    width: 200px; 
+    background-color: var(--colorCaja);
+    font-size: 20px; 
+    border: 5px double var(--colorSombra);
+    border-radius: 15px;
+    padding: 2%;
+    margin: 20px 0 0 3px; # arriba(20px) derecha(0) abajo(0) izquierda(3px)
+}
+.color-unico{ /* h2 class="color-unico" */
+    color: var(--colorTituloSubtitulo); # color distino en la letra
+}
+```
+
+### Textos del elemento p y color en el b
+Los textos que contrendrá los elementos p, tendrán un tamaño de letra y un texto de formato justificado, la funcion de este es que el texto no quede desparejo en sus mrgenes izquerdo y derecho. Respecto al elemento b, le agregue un color rojo, el margin-righ es para dar un espacio entre el texto envuelto con el elemento b y el texto restante del p:
+```sh
+p{
+    font-size: 12px; # tamaño de letra
+    text-align: justify; 
+}
+b{
+    margin-right: 5px; # espacio en su margen derecho
+    color: var(--colorSubtitulo);
+}
+```
+
+### Ajustes en las imagenes
+En las imágenes eh quitado sus esquinas punteadas, le di una sombra con un color rojo, con la finalidad de generar un efecto luminoso al momento de parame con el mouse sobre la imagen, también le dado espacio entre ellos usando su margen de abajo:
+```sh
+img{
+    width: 100%; # ocupará el 100% de ancho dentro de la caja-juegos
+    box-shadow: 0 0 10px var(--colorSombra); # sombra oscura, el 10px es el degradado
+    border-radius: 20px; 
+    margin-bottom: 10px; # doy espacio debajo de las imágenes
+}
+
+img:hover{
+    box-shadow: 0 0 15px var(--colorSombraImagen); # este será el causante de que la sombra sea de color rojo, lo que genera el efecto iluminoso
+}
+```
+
+### Elemento de anclaje
+Se creo un boton sin la necesidad de usar el elemento bottom, se uso el elemeneto de anclaje (anchor), tendrá distinto color al momento de pararme sobre este boton:
+```sh
+a{
+    color: var(--colorLetra);
+    background-color: var(--colorBoton);
+    border: 2px solid var(--colorBordeBoton);
+    border-radius: 5px;
+    padding: 3%; # su relleno
+    text-decoration: none; # elemino el subrayado que contiene la palabra
+}
+a:hover{ # cambia el color de letra y del fondo
+    color: #161a1d; # color negro
+    background-color: var(--colorCaja);
+}
+```
+* Nota: Una cosa más sobre este boton, verás que esta dentro de la clase caja-juegos y la mitad fuera de ella, para generar este efecto, trabajé con position, no solo acá, sino que tambien tuve que trabajar un poco con la caja-juegos:
+```sh
+.caja-juegos{
+    background-color: var(--colorCajaJuegos);
+    box-shadow: 0 0 8px var(--colorSombra);
+    padding: 2%;
+    border: 2px solid var(--colorBorde);
+    border-radius: 10px;
+    margin-top: 40px; # espacio arriba
+    margin-bottom: 40px; # espacio abajo
+
+    # aquí lo importante que se complementa con la clase boton:
+    position: relative; # establezco un constexto para despues posicionar elementos absolutos
+}
+.boton{
+    width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: absolute; # posiciona el botón relativo a la .caja-juegos
+    left: 50%; # centra hroizontalmente el boton
+    transform: translateX(-50%) translateY(-50%); # me permite alinear horizontalmente y hace que sobresalga hacia abaja
+    bottom: -40px; # su funcion es ajustar lo que sobresale el boton de la caja 
+}
+```
+
+
+### Pie de página
+El pie de la pagina tendrá un color de fondo, ocupara la totalidad del ancho de la pagina, tendrá una sombra en el texto de color rojo, no tendrá espacio en su margen de abajo, si tendrá espacio en el margen de arriba, te mostraré como lo hice:
+```sh
+footer{
+    background-color: var(--colorFooter);
+    font-size: 15px; # tamaño de letras
+    color: var(--colorLetra);
+    text-shadow: 1px 2px 2px var(--colorSombraTextoFooter); # sombra en el texto
+    width: 100%; # su ancho
+    margin-top: 5px; # margen de arriba
+    margin-bottom: 0; # saco el margen de abajo
+    text-align: center; # centra el texto
+    padding: 1%;
+}
+```
+
+### Clase caja
+Esta clase, será responsable del tamaño que tendrá el contenido de la página, el proposito por el cual trabajé esto de otra forma, es principalmente por el tamaño, no quería que se extienda demasiado el ancho del contenido dentro, osea lo que es caja-juegos. Para esto solo me puse a trabajr con la clase caja:
+```sh
+.caja{
+    width: 80%; # ocupará el 80% de la pantalla
+    max-width: 700px; # aca lo importante, esto me permite que cuando yo extienda el ancho, solo se extienda el contendio hasta 700px
+    margin: auto; # centra la caja
+    margin-top: 35px; # espacio en el margen de arriba
+    border-radius: 10px;
+    padding: 2%;
+}
+```
